@@ -1,0 +1,246 @@
+.about-page {
+  font-family: sans-serif;
+  color: #111;
+  background-color: #fff;
+}
+
+.about-intro {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.about-intro h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.about-intro p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 14px;
+  color: #555;
+}
+
+.luxury-stats {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.luxury-logo {
+  margin-bottom: 10px;
+}
+
+.luxury-stats h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.luxury-text {
+  max-width: 750px;
+  margin: auto;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.luxury-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.luxury-item {
+  width: 200px;
+  text-align: center;
+}
+
+.luxury-icon {
+  font-size: 40px;
+  color: #bba36c;
+  margin-bottom: 10px;
+}
+
+.luxury-item h3 {
+  font-size: 22px;
+}
+
+/* Leadership Section */
+.leadership {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.leadership h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.leader-scroll-wrapper {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-arrow {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.scroll-arrow:hover {
+  background: #eee;
+}
+
+.scroll-arrow.left {
+  position: absolute;
+  left: -10px;
+}
+
+.scroll-arrow.right {
+  position: absolute;
+  right: -10px;
+}
+
+.leaders {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 10px 30px;
+}
+
+.leaders::-webkit-scrollbar {
+  display: none;
+}
+
+.leader-card {
+  min-width: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.leader-card img {
+  width: 100%;
+  height: 300px;
+}
+
+.leader-text {
+  padding: 10px;
+  background: #000;
+  color: white;
+}
+
+.leader-text h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Awards Section */
+.awards {
+  padding: 60px 20px;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.awards h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.awards p {
+  font-size: 13px;
+  max-width: 700px;
+  margin: auto auto 40px auto;
+  color: #666;
+}
+
+.award-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.award-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.award-icon {
+  color: #bba36c;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+/* 
+.md-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+.md-icon {
+  font-size: 140px;
+  color: #bba36c;
+  flex-shrink: 0;
+  margin-top: 5px;
+} */
+
+.md-details {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.md-headshot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.md-icon {
+  font-size: 120px;
+  color: #bba36c;
+  margin-bottom: 10px;
+}
+
+.md-name-title h4 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.md-name-title p {
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+  text-align: center;
+}
+
+.md-bio {
+  max-width: 500px;
+}
+
+.md-bio h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

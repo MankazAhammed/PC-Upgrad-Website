@@ -1,0 +1,267 @@
+.hero-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.hero-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.hero-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-content-wrapper {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-content-wrapper h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-content-wrapper .lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-button, .hero-button-bar {
+  display: flex;
+  gap: 20px;
+  z-index: 2;
+}
+
+.hero-button {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.hero-button-bar {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-button .btn, .hero-button-bar .btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #c19b76;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #a5825e;
+}
+
+.btn-outline-light {
+  background-color: white;
+  color: black;
+}
+
+.btn-outline-light:hover {
+  background-color: #c19b76;
+  color: white;
+}
+
+/* Filter Section */
+.filter-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.filter-box {
+  color: white;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-row.clickable {
+  position: relative;
+  min-width: 200px;
+  border-radius: 30px;
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: background 0.2s ease;
+}
+
+.filter-row.clickable:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-value {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  width: 100%;
+  background: white;
+  color: #000;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.custom-dropdown .dropdown-header {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.custom-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-dropdown li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.custom-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.custom-dropdown li:hover {
+  background-color: #f8f8f8;
+}
+
+.filter-actions {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.show-results-btn {
+  background-color: #c19b76;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.show-results-btn:hover {
+  background-color: #a5825e;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter-row {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .filter-actions {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .show-results-btn {
+    width: 100%;
+  }
+
+  .hero-content-wrapper h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+}
