@@ -8,6 +8,7 @@ import {
   FaCity,
   FaArrowLeft,
   FaArrowRight,
+  FaUserTie,
 } from "react-icons/fa";
 import Footer from "../Footer/Footer";
 
@@ -27,22 +28,43 @@ export default function About() {
     <div className="about-page">
       {/* SECTION 1 - ABOUT */}
       <section className="about-intro">
-        <h1>ABOUT DAMAC</h1>
+        <h1>ABOUT LORDS</h1>
         <p>
-          The DAMAC Group of Companies established its property development
-          division with the formation of DAMAC Properties in 2002, which has
+          The LORDS Group of Companies established its property development
+          division with the formation of LORDS Properties in 2002, which has
           since grown and expanded to become a globally recognised brand.
         </p>
+
+        <div className="md-details">
+  <div className="md-headshot">
+    <FaUserTie className="md-icon" />
+    <div className="md-name-title">
+      <h4>Sudarshan Shetty</h4>
+      <p>Managing Director</p>
+    </div>
+  </div>
+  <div className="md-bio">
+    <h3>Meet Our Managing Director</h3>
+    <p>
+      Sudarshan Shetty is a visionary leader driving LORDS Properties
+      forward with his strategic foresight and dedication to excellence.
+      With over two decades of experience in real estate and
+      investments, he has played a pivotal role in shaping iconic
+      developments across the region. His passion for innovation and
+      commitment to quality continue to inspire the entire organization.
+    </p>
+  </div>
+</div>
+
       </section>
 
       {/* SECTION 2 - LUXURY STATS */}
       <section className="luxury-stats">
-        <img src={firstImg} alt="D Logo" className="luxury-logo" />
         <h2>A WORLD OF LUXURY</h2>
         <p className="luxury-text">
           From world-class master communities and luxurious residential towers
           to expansive master-planned developments and exclusive island resort
-          residences, DAMAC Properties is renowned for creating projects that
+          residences, LORDS Properties is renowned for creating projects that
           blend innovative design with exceptional amenities.
         </p>
 
@@ -66,7 +88,7 @@ export default function About() {
       </section>
 
       {/* SECTION 3 - LEADERSHIP */}
-      <section className="leadership">
+      {/* <section className="leadership">
         <h2>LEADERSHIP TEAM</h2>
         <p>
           Our top management is deeply involved in shaping the company’s
@@ -74,7 +96,10 @@ export default function About() {
         </p>
 
         <div className="leader-scroll-wrapper">
-          <button className="scroll-arrow left" onClick={() => scrollLeaders("left")}>
+          <button
+            className="scroll-arrow left"
+            onClick={() => scrollLeaders("left")}
+          >
             <FaArrowLeft />
           </button>
 
@@ -112,17 +137,20 @@ export default function About() {
             ))}
           </div>
 
-          <button className="scroll-arrow right" onClick={() => scrollLeaders("right")}>
+          <button
+            className="scroll-arrow right"
+            onClick={() => scrollLeaders("right")}
+          >
             <FaArrowRight />
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* SECTION 4 - AWARDS */}
       <section className="awards">
         <h2>LATEST AWARDS</h2>
         <p>
-          DAMAC Properties accolades reflect our commitment to excellence,
+          LORDS Properties accolades reflect our commitment to excellence,
           innovation, and leadership in real estate.
         </p>
         <div className="award-grid">

@@ -8,7 +8,7 @@ export default function ExpertiseSection() {
       <div className="expertise-content">
         <h2 className="expertise-title">OUR EXPERTISE</h2>
         <p className="expertise-desc">
-          Our luxury sales advisors bring a wealth of experience in assisting owners and investors in discovering properties that align seamlessly with their needs. With extensive knowledge of property trends, a solid grasp of industry insights, and an in-depth understanding of the local market, our advisors are dedicated to ensuring that your choice to invest in DAMAC Properties is a confident and informed choice.
+          Our luxury sales advisors bring a wealth of experience in assisting owners and investors in discovering properties that align seamlessly with their needs. With extensive knowledge of property trends, a solid grasp of industry insights, and an in-depth understanding of the local market, our advisors are dedicated to ensuring that your choice to invest in LORDS Properties is a confident and informed choice.
         </p>
 
         <div className="expertise-stats">

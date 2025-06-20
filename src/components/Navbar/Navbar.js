@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import GetInTouchModal from "../GetInTouchModal/GetInTouchModal";
-import LElogo from "../../assets/LELogo.png";
+import LElogo from "../../assets/newlogo.png";
 import "./Navbar.css";
 
 const CustomNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const scrolledPast = window.scrollY > 50;
+      const isNotHome = location.pathname !== "/";
+      setScrolled(scrolledPast || isNotHome);
     };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -28,7 +34,11 @@ const CustomNavbar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/">
-                <img src={LElogo} alt="Lords Logo" height="40" />
+                <img
+                  src={LElogo}
+                  alt="Lords Logo"
+                  style={{ height: "40px", width: "35px" }}
+                />
               </Nav.Link>
               <Nav.Link as={Link} to="/browse-properties">
                 Browse Properties

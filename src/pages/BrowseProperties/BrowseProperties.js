@@ -1,6 +1,9 @@
 import React from "react";
 import "./BrowseProperties.css";
-import firstImg from "../../assets/firstImg.jpeg"; // Use your actual image path
+import firstImg from "../../assets/eight.jpg";
+import five from "../../assets/fifth.jpg";
+import six from "../../assets/six.jpg";
+import thiteen from "../../assets/thiteen.jpg";
 
 const properties = [
   {
@@ -15,21 +18,21 @@ const properties = [
     location: "DAMAC Riverside Community, Dubai",
     price: "From AED 1,293,000",
     type: "1-2 BR, Apartment",
-    image: firstImg,
+    image: five,
   },
   {
     name: "ELO 3",
     location: "DAMAC Hills 2, Dubai",
     price: "From AED 1,311,000",
     type: "2 BR, Apartment",
-    image: firstImg,
+    image: six,
   },
   {
     name: "Safa Gate",
     location: "Sheikh Zayed Road, Dubai",
     price: "From AED 1,176,000",
     type: "1-2 STD BR, Apartment",
-    image: firstImg,
+    image: thiteen,
   },
 ];
 

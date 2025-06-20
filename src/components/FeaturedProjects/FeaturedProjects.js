@@ -1,85 +1,57 @@
-import React, { useState } from 'react';
-import './FeaturedProjects.css';
-import firstImg from "../../assets/firstImg.jpeg";
-import { FaArrowLeft, FaArrowRight, FaTimes } from 'react-icons/fa';
-
-const brands = [
-  {
-    name: 'Roberto Cavalli',
-    description: 'Founded in 1970, Roberto Cavalli is a global icon of Italian luxury, blending creativity and craftsmanship. Its residences mirror the brand\'s glamour and attention to detail.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Mandarin Oriental',
-    description: 'An iconic symbol of Asian hospitality, creating tranquil and luxurious living experiences.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Versace Home',
-    description: 'The unmistakable Italian fashion house blends opulence and classical elegance into real estate.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'de GRISOGONO',
-    description: 'Swiss high jewelry brand reflecting elegance and contemporary artistry in residential design.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Paramount',
-    description: 'Hollywood glam brought into your living space with bold designs and cinematic flair.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Trump',
-    description: 'Refined luxury and world-class standards in every detail of these iconic developments.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Radisson',
-    description: 'Global hospitality leader bringing smart, stylish living to upscale real estate.',
-    images: [firstImg, firstImg, firstImg]
-  },
-  {
-    name: 'Rotana',
-    description: 'Middle East rooted hospitality with contemporary living for modern lifestyles.',
-    images: [firstImg, firstImg, firstImg]
-  }
-];
+import React from "react";
+import "./FeaturedProjects.css";
+// import white_wave_background from "../../assets/White_wave_bg.mp4";
+import white_wave_background from "../../assets/blackBg.mp4";
+import nakheel_logo from "../../assets/nakheel.png";
+import sobha_logo from "../../assets/Sobha.png"
+import meraas_logo from "../../assets/Meraas.png"
+import Aldar from "../../assets/Aldar.png"
+import Samana from "../../assets/Samana.png"
 
 const FeaturedProjects = () => {
-  const [activeBrand, setActiveBrand] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const openModal = (brand) => {
-    setActiveBrand(brand);
-    setActiveIndex(0);
-  };
-
-  const closeModal = () => {
-    setActiveBrand(null);
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % activeBrand.images.length);
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + activeBrand.images.length) % activeBrand.images.length);
-  };
-
   return (
     <section className="featured-section">
+      <video className="background-video" autoPlay loop muted playsInline>
+        <source src={white_wave_background} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="background-overlay"></div>
+
       <div className="featured-header">
-        <h2>A NEW REALM OF CURATED COLLABORATIONS</h2>
+        <h2>OUR PREMIUM FRIEND</h2>
         <p>
-          DAMAC has worked closely with some of the world's most sought-after purveyors of luxury to create truly exquisite environments
+          LORDS has worked closely with some of the world's most sought-after
+          purveyors of luxury to create truly exquisite environments.
+        </p>
+      </div>
+
+      
+      <div className="logo-grid">
+        <img src={nakheel_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={sobha_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={meraas_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={Aldar} alt="Nakheel Logo" className="award-logo" />
+        <img src={Samana} alt="Nakheel Logo" className="award-logo" />
+        <img src={nakheel_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={sobha_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={meraas_logo} alt="Nakheel Logo" className="award-logo" />
+        <img src={Aldar} alt="Nakheel Logo" className="award-logo" />
+        <img src={Samana} alt="Nakheel Logo" className="award-logo" />
+        {/* Later you can add more logos here */}
+      </div>
+      {/* Commented out rest of the brand/modal UI */}
+      {/*
+      <div className="featured-header">
+        <h2>OUR PREMIUM PROJECTS</h2>
+        <p>
+          LORDS has worked closely with some of the world's most sought-after purveyors of luxury to create truly exquisite environments.
         </p>
       </div>
 
       <div className="brand-grid">
         {brands.map((brand, index) => (
           <div key={index} className="brand-card" onClick={() => openModal(brand)}>
-            <img src={brand.images[0]} alt={brand.name} />
+            <img src={brand.logo} alt={brand.name} />
             <div className="brand-name">{brand.name}</div>
           </div>
         ))}
@@ -90,26 +62,27 @@ const FeaturedProjects = () => {
           <div className="modal-content">
             <button className="modal-close" onClick={closeModal}><FaTimes /></button>
             <div className="modal-header">
+              <img src={activeBrand.logo} alt={`${activeBrand.name} Logo`} className="modal-logo" />
               <h4>{activeBrand.name}</h4>
               <p>{activeBrand.description}</p>
             </div>
-
-            <div className="carousel">
-              <button className="carousel-arrow left" onClick={prevSlide}><FaArrowLeft /></button>
-              <div className="carousel-image">
-                <img src={activeBrand.images[activeIndex]} alt={`Slide ${activeIndex + 1}`} />
-              </div>
-              <button className="carousel-arrow right" onClick={nextSlide}><FaArrowRight /></button>
-            </div>
-
-            <div className="carousel-dots">
-              {activeBrand.images.map((_, i) => (
-                <span key={i} className={i === activeIndex ? "dot active" : "dot"}></span>
-              ))}
+            <div className="brand-video-wrapper">
+              <video
+                controls
+                className="brand-video"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={activeBrand.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
       )}
+      */}
     </section>
   );
 };

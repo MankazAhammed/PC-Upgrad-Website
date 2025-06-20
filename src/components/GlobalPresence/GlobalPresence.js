@@ -1,13 +1,17 @@
 import React from 'react';
 import './GlobalPresence.css';
-import firstImg from "../../assets/firstImg.jpeg";
+import thiteen from "../../assets/thiteen.jpg";
+import six from "../../assets/six.jpg"
+import seven from "../../assets/seven.jpg"
+import eight from "../../assets/eight.jpg"
+import eleven from "../../assets/eleven.jpg"
 
 const logos = [
-  { image: firstImg, title: 'SEAVIEWS', location: 'Doha, Qatar' },
-  { image: firstImg, title: 'DAMAC TOWERS RIYADH', location: 'Riyadh, Saudi Arabia' },
-  { image: firstImg, title: 'MANDARIN ORIENTAL', location: 'Malé, Maldives' },
-  { image: firstImg, title: 'DAMAC TOWER BEIRUT', location: 'Beirut, Lebanon' },
-  { image: firstImg, title: 'SEAVIEWS', location: 'Doha, Qatar' },
+  { image: thiteen, title: 'SEAVIEWS', location: 'Doha, Qatar' },
+  { image: eleven, title: 'DAMAC TOWERS RIYADH', location: 'Riyadh, Saudi Arabia' },
+  { image: seven, title: 'MANDARIN ORIENTAL', location: 'Malé, Maldives' },
+  { image: eight, title: 'DAMAC TOWER BEIRUT', location: 'Beirut, Lebanon' },
+  { image: six, title: 'SEAVIEWS', location: 'Doha, Qatar' },
 ];
 
 export default function GlobalPresence() {

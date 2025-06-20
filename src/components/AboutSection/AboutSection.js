@@ -37,7 +37,7 @@ const AboutSection = () => {
     <section className="developer-section">
       <div className="developer-heading">
         <h2>THE PREMIER LUXURY PROPERTY DEVELOPER IN DUBAI</h2>
-        <a href="#" className="discover-link">DISCOVER DAMAC</a>
+        <a href="#" className="discover-link">DISCOVER LORDS</a>
       </div>
 
       <div className="developer-grid">

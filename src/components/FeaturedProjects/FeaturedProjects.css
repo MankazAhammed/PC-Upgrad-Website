@@ -1,142 +1,88 @@
 .featured-section {
+  position: relative;
   padding: 60px 20px;
-  background: white;
+  background: transparent;
   text-align: center;
-}
-
-.featured-header h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.brand-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.brand-card {
-  width: 180px;
-  cursor: pointer;
-  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s;
+  min-height: 100vh;
 }
 
-.brand-card:hover {
-  transform: translateY(-5px);
-}
-
-.brand-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.brand-name {
-  margin-top: 8px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* Modal Styles */
-.modal-overlay {
-  position: fixed;
+.background-video {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(20, 20, 20, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  overflow-y: auto;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 1100px;
-  border-radius: 12px;
-  position: relative;
-  text-align: center;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.modal-header h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.modal-header p {
-  font-size: 14px;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 20px;
-}
-
-.carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel-image img {
-  max-width: 90%;
-  max-height: 500px;
-  border-radius: 10px;
   object-fit: cover;
+  z-index: -2;
+  opacity: 0.9;
 }
 
-.carousel-arrow {
+.background-overlay {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent dark */
+  z-index: -1;
+}
+.background-overlay {
+  transition: background 0.4s ease-in-out;
 }
 
-.carousel-arrow.left {
-  left: -30px;
+.featured-header {
+  position: relative;
+  z-index: 1;
+  color: white;
 }
 
-.carousel-arrow.right {
-  right: -30px;
+.featured-header h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  font-weight: bold;
 }
 
-.carousel-dots {
-  margin-top: 20px;
+.featured-header p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.dot {
-  height: 8px;
-  width: 8px;
-  margin: 0 4px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
+.logo-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  z-index: 1;
+  position: relative;
 }
 
-.dot.active {
-  background-color: #333;
+.award-logo {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1); /* white tint */
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.award-logo:hover {
+  transform: scale(1.05);
+}
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }

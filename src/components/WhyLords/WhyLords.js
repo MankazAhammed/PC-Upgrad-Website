@@ -1,47 +1,55 @@
 import React, { useRef } from 'react';
 import './WhyLords.css';
 import firstImg from "../../assets/firstImg.jpeg"
+import secondImg from "../../assets/luxury-architecture-exterior-design.jpg"
+import thirdImg from "../../assets/luxury-waterfront-homes-sunset.jpg"
+import fourthImg from "../../assets/vertical-view-dubai-city-from-top-tower.jpg"
+import five from "../../assets/fifth.jpg";
+import six from "../../assets/six.jpg";
+import seven from "../../assets/seven.jpg";
+import twele from "../../assets/twele.jpg";
+import eight from "../../assets/eight.jpg";
 
 const cards = [
   {
     title: 'UAE GOLDEN VISA BENEFITS',
     desc: 'Real estate investments in Dubai can grant you long-term residency and exclusive Golden Visa benefits.',
-    image: firstImg,
+    image: twele,
   },
   {
     title: 'PREMIUM HEALTHCARE',
     desc: 'With strong healthcare investments, the city is ideal for supporting your health and wellbeing.',
-    image: firstImg,
+    image: secondImg,
   },
   {
     title: 'WORLD CLASS EDUCATION',
     desc: 'Dubai offers top-tier schools and universities with globally recognized curricula, ideal for families and expatriates.',
-    image: firstImg,
+    image: thirdImg,
   },
   {
     title: 'ENTERTAINMENT HUB',
     desc: 'From iconic landmarks to theme parks and cultural events, Dubai is a world-class entertainment destination.',
-    image: firstImg,
+    image: fourthImg,
   },
   {
     title: 'COMMUNITY SAFETY',
     desc: 'The UAE ranks as one of the safest countries globally, with well-developed, effective law enforcement systems.',
-    image: firstImg,
+    image: five,
   },
   {
     title: 'WORLD CLASS EDUCATION',
     desc: 'Dubai offers top-tier schools and universities with globally recognized curricula, ideal for families and expatriates.',
-    image: firstImg,
+    image: six,
   },
   {
     title: 'ENTERTAINMENT HUB',
     desc: 'From iconic landmarks to theme parks and cultural events, Dubai is a world-class entertainment destination.',
-    image: firstImg,
+    image: seven,
   },
   {
     title: 'COMMUNITY SAFETY',
     desc: 'The UAE ranks as one of the safest countries globally, with well-developed, effective law enforcement systems.',
-    image: firstImg,
+    image: eight,
   },
 ];
 

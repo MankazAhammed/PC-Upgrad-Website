@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./HeroSection.css";
 import heroVideo from "../../assets/hero-video.mp4";
+import heroVideoTwo from "../../assets/hero-video-two.mp4";
+import Footerlogo from "../../assets/Footerlogo.png"
 
 const HeroSection = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -32,10 +34,11 @@ const HeroSection = () => {
               prime locations
             </p>
             <div className="hero-button">
-              <Button variant="primary" className="me-3">
+                      <img src={Footerlogo} alt="LORDS" className="footer-logo" />
+              {/* <Button variant="primary" className="me-3">
                 Explore
               </Button>
-              <Button variant="outline-light">Contact Us</Button>
+              <Button variant="outline-light">Contact Us</Button> */}
             </div>
           </div>
           <div className="scroll-indicator" onClick={scrollToNext}>↓</div>
@@ -46,7 +49,7 @@ const HeroSection = () => {
       <section className="hero-section">
         <div className="hero-video-container">
           <video autoPlay loop muted playsInline className="hero-video">
-            <source src={heroVideo} type="video/mp4" />
+            <source src={heroVideoTwo} type="video/mp4" />
           </video>
         </div>
         <div className="hero-overlay">

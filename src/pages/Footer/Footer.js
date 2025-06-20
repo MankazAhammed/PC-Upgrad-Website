@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import firstImg from "../../assets/firstImg.jpeg";
+import Footerlogo from "../../assets/Footerlogo.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -14,7 +15,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-logo-social">
-          <img src={firstImg} alt="DAMAC" className="footer-logo" />
+          <img src={Footerlogo} alt="LORDS" className="footer-logo" />
           <div className="social-icons">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
@@ -50,9 +51,9 @@ export default function Footer() {
 
       <div className="footer-links">
         <div>
-          <h5>WHY DAMAC</h5>
+          <h5>WHY LORDS</h5>
           <ul>
-            <li>About DAMAC</li>
+            <li>About LORDS</li>
             <li>Founder's Message</li>
             <li>Investor relations</li>
             <li>ESG</li>
@@ -121,7 +122,7 @@ export default function Footer() {
         </div>
         <div className="footer-legal">
           <p>
-            © 2025 DAMAC Properties. All Rights Reserved (v3.1.0) <br />
+            © 2025 LORDS Properties. All Rights Reserved (v3.1.0) <br />
             <a href="#">Terms and Conditions</a> |{" "}
             <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a> |{" "}
             <a href="#">Corporate Communications Policy</a>
