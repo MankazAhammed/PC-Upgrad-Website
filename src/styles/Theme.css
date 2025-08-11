@@ -1,0 +1,17 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f9f9f9;
+}
+
+.dark-mode {
+  --bg: #1a1a1a;
+  --text: #eaeaea;
+  --card: #2c2c2c;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}

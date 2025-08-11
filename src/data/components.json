@@ -1,0 +1,108 @@
+{
+  "cpus": [
+    { "name": "Intel Core i9-13900K", "socket": "LGA1700", "price": 2399 },
+    { "name": "AMD Ryzen 7 7800X3D", "socket": "AM5", "price": 1799 },
+    { "name": "Intel Core i5-12400F", "socket": "LGA1700", "price": 849 }
+  ],
+  "motherboards": [
+    {
+      "name": "ASUS ROG STRIX Z790-E",
+      "socket": "LGA1700",
+      "ram_type": "DDR5",
+      "form_factor": "ATX",
+      "price": 1450
+    },
+    {
+      "name": "MSI MAG B650 TOMAHAWK",
+      "socket": "AM5",
+      "ram_type": "DDR5",
+      "form_factor": "ATX",
+      "price": 1050
+    },
+    {
+      "name": "Gigabyte B660M DS3H",
+      "socket": "LGA1700",
+      "ram_type": "DDR4",
+      "form_factor": "mATX",
+      "price": 599
+    }
+  ],
+  "gpus": [
+    {
+      "name": "NVIDIA RTX 4080",
+      "power": 320,
+      "length_mm": 310,
+      "price": 4599
+    },
+    {
+      "name": "AMD Radeon RX 7900 XT",
+      "power": 300,
+      "length_mm": 280,
+      "price": 3499
+    },
+    {
+      "name": "NVIDIA RTX 3060 Ti",
+      "power": 200,
+      "length_mm": 240,
+      "price": 1999
+    }
+  ],
+  "ram": [
+    {
+      "name": "Corsair Vengeance 32GB DDR5 6000MHz",
+      "type": "DDR5",
+      "price": 699
+    },
+    {
+      "name": "G.SKILL Ripjaws 16GB DDR4 3200MHz",
+      "type": "DDR4",
+      "price": 299
+    },
+    { "name": "Kingston Fury 64GB DDR5 5600MHz", "type": "DDR5", "price": 999 }
+  ],
+  "psus": [
+    { "name": "Corsair RM850x 850W", "wattage": 850, "price": 549 },
+    { "name": "Seasonic Focus GX-750 750W", "wattage": 750, "price": 499 },
+    { "name": "Cooler Master MWE 650 Bronze", "wattage": 650, "price": 349 }
+  ],
+  "storage": [
+    { "name": "Samsung 980 PRO 1TB NVMe", "type": "SSD", "price": 449 },
+    { "name": "Seagate Barracuda 2TB", "type": "HDD", "price": 249 },
+    { "name": "WD Black SN850X 2TB", "type": "SSD", "price": 599 }
+  ],
+  "cases": [
+    {
+      "name": "NZXT H510",
+      "form_factor": "ATX",
+      "gpu_clearance_mm": 310,
+      "price": 399
+    },
+    {
+      "name": "Fractal Design Meshify C",
+      "form_factor": "ATX",
+      "gpu_clearance_mm": 315,
+      "price": 459
+    },
+    {
+      "name": "Cooler Master NR200",
+      "form_factor": "Mini-ITX",
+      "gpu_clearance_mm": 330,
+      "price": 499
+    }
+  ],
+  "coolers": [
+    { "name": "Noctua NH-D15", "type": "Air", "height_mm": 165, "price": 429 },
+    {
+      "name": "Corsair iCUE H150i",
+      "type": "Liquid",
+      "radiator_size": 360,
+      "price": 649
+    },
+    {
+      "name": "be quiet! Pure Rock 2",
+      "type": "Air",
+      "height_mm": 155,
+      "price": 229
+    }
+  ]
+}
