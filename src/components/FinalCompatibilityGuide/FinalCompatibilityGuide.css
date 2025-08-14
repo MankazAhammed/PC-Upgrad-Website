@@ -1,0 +1,196 @@
+.compatibility-check {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.form-section h1 {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  background: #f9fafb;
+  transition: all 0.2s;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+}
+
+/* CTA buttons */
+.cta-button {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cta-button:hover {
+  background: #2563eb;
+}
+
+/* Results box */
+.result-box {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.result-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.result-box li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.result-box li.success {
+  color: #16a34a;
+}
+
+.result-box li.error {
+  color: #dc2626;
+}
+
+.result-box li.warning {
+  color: #f97316;
+}
+
+/* AI tip box */
+.ai-hint {
+  background: #fffbea;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+/* Summary panel */
+.summary-panel {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.summary-panel h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.summary-panel ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.summary-panel li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+}
+
+/* Top bar (dark mode toggle) */
+.top-bar {
+  padding: 12px 20px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-bar button {
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.top-bar button:hover {
+  background: #1e293b;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+  background: #0f172a;
+  color: white;
+}
+
+.dark-mode .form-section,
+.dark-mode .summary-panel {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-mode .form-group label,
+.dark-mode .summary-panel li,
+.dark-mode .result-box li {
+  color: #f1f5f9;
+}
+
+.dark-mode .form-group select {
+  background: #334155;
+  color: white;
+  border-color: #475569;
+}
+
+.dark-mode .top-bar {
+  background: #1e293b;
+}
+
+.dark-mode .cta-button {
+  background: #3b82f6;
+}
