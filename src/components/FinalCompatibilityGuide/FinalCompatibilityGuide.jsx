@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { jsPDF } from "jspdf";
 import data from "../../data/components.json";
 import { motion, AnimatePresence } from "framer-motion";
-import "../../pages/CompatibilityCheck/CompatibilityCheck.css";
-import "../../pages/MockTool/MockTool.css";
-
-// Font Awesome
+import "./FinalCompatibilityGuide.css";
+import PopupModal from "../PopupModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
@@ -36,9 +34,16 @@ const FinalCompatibilityGuide = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [results, setResults] = useState([]);
   const [aiHint, setAiHint] = useState("");
-
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState({
+    title: "",
+    message: "",
+    type: "info",
+  });
   const selectedCpu = data.cpus.find((c) => c.name === cpu);
-  const selectedMotherboard = data.motherboards.find((m) => m.name === motherboard);
+  const selectedMotherboard = data.motherboards.find(
+    (m) => m.name === motherboard
+  );
   const selectedRam = data.ram.find((r) => r.name === ram);
   const selectedGpu = data.gpus.find((g) => g.name === gpu);
   const selectedPsu = data.psus.find((p) => p.name === psu);
@@ -64,7 +69,10 @@ const FinalCompatibilityGuide = () => {
 
     if (selectedCpu && selectedMotherboard) {
       if (selectedCpu.socket === selectedMotherboard.socket) {
-        messages.push({ level: "success", text: "CPU and motherboard sockets match." });
+        messages.push({
+          level: "success",
+          text: "CPU and motherboard sockets match.",
+        });
       } else {
         messages.push({
           level: "error",
@@ -75,7 +83,10 @@ const FinalCompatibilityGuide = () => {
 
     if (selectedRam && selectedMotherboard) {
       if (selectedRam.type === selectedMotherboard.ram_type) {
-        messages.push({ level: "success", text: "RAM type is supported by the motherboard." });
+        messages.push({
+          level: "success",
+          text: "RAM type is supported by the motherboard.",
+        });
       } else {
         messages.push({
           level: "error",
@@ -86,7 +97,10 @@ const FinalCompatibilityGuide = () => {
 
     if (selectedGpu && selectedCase) {
       if (selectedGpu.length_mm <= selectedCase.gpu_clearance_mm) {
-        messages.push({ level: "success", text: "GPU will fit in the selected case." });
+        messages.push({
+          level: "success",
+          text: "GPU will fit in the selected case.",
+        });
       } else {
         messages.push({
           level: "error",
@@ -98,7 +112,10 @@ const FinalCompatibilityGuide = () => {
     if (selectedGpu && selectedCpu && selectedPsu) {
       const totalPower = selectedGpu.power + 125;
       if (selectedPsu.wattage >= totalPower + 150) {
-        messages.push({ level: "success", text: "PSU wattage is sufficient for GPU + CPU." });
+        messages.push({
+          level: "success",
+          text: "PSU wattage is sufficient for GPU + CPU.",
+        });
       } else {
         messages.push({
           level: "error",
@@ -109,9 +126,12 @@ const FinalCompatibilityGuide = () => {
 
     if (
       selectedGpu?.power > 250 &&
-      ["i5", "i3", "Ryzen 5", "Ryzen 3"].some((frag) => selectedCpu?.name.includes(frag))
+      ["i5", "i3", "Ryzen 5", "Ryzen 3"].some((frag) =>
+        selectedCpu?.name.includes(frag)
+      )
     ) {
-      tip = "Consider upgrading to a higher-end CPU to avoid potential bottlenecks with your powerful GPU.";
+      tip =
+        "Consider upgrading to a higher-end CPU to avoid potential bottlenecks with your powerful GPU.";
     }
 
     setResults(messages);
@@ -142,7 +162,12 @@ const FinalCompatibilityGuide = () => {
     doc.text("Compatibility Results:", 20, y);
     y += 10;
     results.forEach((line) => {
-      const tag = line.level === "success" ? "[OK]" : line.level === "error" ? "[ERROR]" : "[NOTE]";
+      const tag =
+        line.level === "success"
+          ? "[OK]"
+          : line.level === "error"
+          ? "[ERROR]"
+          : "[NOTE]";
       doc.text(`${tag} ${line.text}`, 20, y);
       y += 10;
     });
@@ -159,16 +184,41 @@ const FinalCompatibilityGuide = () => {
 
   const totalPower = (selectedGpu?.power || 0) + (selectedCpu ? 125 : 0);
   const psuWattage = selectedPsu?.wattage || 0;
-  const powerUsage = psuWattage ? Math.min(100, Math.round((totalPower / psuWattage) * 100)) : 0;
+  const powerUsage = psuWattage
+    ? Math.min(100, Math.round((totalPower / psuWattage) * 100))
+    : 0;
 
   const formFields = [
     { label: "CPU", value: cpu, set: setCpu, options: data.cpus },
-    { label: "Motherboard", value: motherboard, set: setMotherboard, options: filteredMotherboards, disabled: !cpu },
-    { label: "RAM", value: ram, set: setRam, options: filteredRAMs, disabled: !motherboard },
+    {
+      label: "Motherboard",
+      value: motherboard,
+      set: setMotherboard,
+      options: filteredMotherboards,
+      disabled: !cpu,
+    },
+    {
+      label: "RAM",
+      value: ram,
+      set: setRam,
+      options: filteredRAMs,
+      disabled: !motherboard,
+    },
     { label: "GPU", value: gpu, set: setGpu, options: data.gpus },
-    { label: "Case", value: pcCase, set: setPcCase, options: compatibleCases, disabled: !gpu },
+    {
+      label: "Case",
+      value: pcCase,
+      set: setPcCase,
+      options: compatibleCases,
+      disabled: !gpu,
+    },
     { label: "PSU", value: psu, set: setPsu, options: data.psus },
-    { label: "Storage", value: storage, set: setStorage, options: data.storage },
+    {
+      label: "Storage",
+      value: storage,
+      set: setStorage,
+      options: data.storage,
+    },
     { label: "Cooler", value: cooler, set: setCooler, options: data.coolers },
   ];
 
@@ -183,10 +233,19 @@ const FinalCompatibilityGuide = () => {
       });
 
       await res.json();
-      alert("Build saved successfully!");
+      setModalData({
+        title: "Build Saved",
+        message: "Your build was saved successfully!",
+        type: "success",
+      });
+      setModalOpen(true);
     } catch (err) {
-      alert("Failed to save build.");
-      console.error(err);
+      setModalData({
+        title: "Save Failed",
+        message: "Failed to save build. Please try again.",
+        type: "error",
+      });
+      setModalOpen(true);
     }
   };
 
@@ -202,7 +261,11 @@ const FinalCompatibilityGuide = () => {
   };
 
   const levelToIcon = (level) =>
-    level === "success" ? faCheckCircle : level === "error" ? faTimesCircle : faExclamationCircle;
+    level === "success"
+      ? faCheckCircle
+      : level === "error"
+      ? faTimesCircle
+      : faExclamationCircle;
 
   return (
     <div className={darkMode ? "dark-mode" : ""}>
@@ -226,24 +289,26 @@ const FinalCompatibilityGuide = () => {
               handleSaveBuild();
             }}
           >
-            {formFields.map(({ label, value, set, options, disabled = false }) => (
-              <div className="form-group" key={label}>
-                <label>{label}</label>
-                <select
-                  value={value}
-                  onChange={(e) => set(e.target.value)}
-                  disabled={disabled}
-                  required
-                >
-                  <option value="">-- Select {label} --</option>
-                  {options.map((item) => (
-                    <option key={item.name} value={item.name}>
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            ))}
+            {formFields.map(
+              ({ label, value, set, options, disabled = false }) => (
+                <div className="form-group" key={label}>
+                  <label>{label}</label>
+                  <select
+                    value={value}
+                    onChange={(e) => set(e.target.value)}
+                    disabled={disabled}
+                    required
+                  >
+                    <option value="">-- Select {label} --</option>
+                    {options.map((item) => (
+                      <option key={item.name} value={item.name}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )
+            )}
             <button type="submit" className="cta-button">
               Check Compatibility
             </button>
@@ -273,7 +338,10 @@ const FinalCompatibilityGuide = () => {
                           : "warning"
                       }
                     >
-                      <FontAwesomeIcon icon={levelToIcon(item.level)} style={{ marginRight: 8 }} />
+                      <FontAwesomeIcon
+                        icon={levelToIcon(item.level)}
+                        style={{ marginRight: 8 }}
+                      />
                       {item.text}
                     </li>
                   ))}
@@ -283,22 +351,40 @@ const FinalCompatibilityGuide = () => {
           </AnimatePresence>
 
           {aiHint && (
-            <motion.div className="ai-hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <motion.div
+              className="ai-hint"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               <p>
-                <FontAwesomeIcon icon={faLightbulb} style={{ marginRight: 8 }} />
+                <FontAwesomeIcon
+                  icon={faLightbulb}
+                  style={{ marginRight: 8 }}
+                />
                 {aiHint}
               </p>
             </motion.div>
           )}
 
-          <button onClick={handleDownloadPDF} className="cta-button" style={{ marginTop: 20 }}>
+          <button
+            onClick={handleDownloadPDF}
+            className="cta-button"
+            style={{ marginTop: 20 }}
+          >
             Export to PDF
           </button>
         </div>
 
-        <motion.div className="summary-panel" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div
+          className="summary-panel"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <h3>
-            <FontAwesomeIcon icon={faClipboardList} style={{ marginRight: 8 }} />
+            <FontAwesomeIcon
+              icon={faClipboardList}
+              style={{ marginRight: 8 }}
+            />
             Build Summary
           </h3>
           <ul>
@@ -342,7 +428,11 @@ const FinalCompatibilityGuide = () => {
                     width: `${powerUsage}%`,
                     height: "100%",
                     backgroundColor:
-                      powerUsage > 90 ? "red" : powerUsage > 70 ? "orange" : "green",
+                      powerUsage > 90
+                        ? "red"
+                        : powerUsage > 70
+                        ? "orange"
+                        : "green",
                   }}
                 />
               </div>
@@ -353,6 +443,13 @@ const FinalCompatibilityGuide = () => {
           )}
         </motion.div>
       </div>
+      <PopupModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={modalData.title}
+        message={modalData.message}
+        type={modalData.type}
+      />
     </div>
   );
 };
